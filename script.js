@@ -12,9 +12,22 @@
   tbtn.addEventListener("click",function(){setTheme(root.getAttribute("data-theme")==="dark"?"light":"dark",true)});
   dark.addEventListener("change",function(e){if(!saved())setTheme(e.matches?"dark":"light",false)});
 
-  /* Horarios */
+  /* Zona horaria del local (nombre IANA). Cambiala si el local está en otro lugar. */
+  var TIMEZONE="America/Asuncion";
+
+  /* Horarios (en la zona horaria del local; si falla, usa la del visitante) */
+  function nowIn(){
+    try{
+      var p={};
+      new Intl.DateTimeFormat("en-US",{timeZone:TIMEZONE,weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"})
+        .formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+      var d=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday);
+      if(d<0)throw 0;
+      return {d:d,h:+p.hour+ +p.minute/60};
+    }catch(e){var n=new Date();return {d:n.getDay(),h:n.getHours()+n.getMinutes()/60}}
+  }
   var H=[["Domingo",8,14],["Lunes",7,20],["Martes",7,20],["Miércoles",7,20],["Jueves",7,20],["Viernes",7,20],["Sábado",7,20]];
-  var now=new Date(),t=H[now.getDay()],hr=now.getHours()+now.getMinutes()/60,st=document.getElementById("status");
+  var now=nowIn(),t=H[now.d],hr=now.h,st=document.getElementById("status");
   var open=hr>=t[1]&&hr<t[2];
   st.className="status"+(open?" open":"");
   st.querySelector("span").textContent=open?"Abierto ahora, hasta las "+t[2]+":00":"Cerrado ahora. Hoy abrimos de "+t[1]+":00 a "+t[2]+":00";

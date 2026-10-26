@@ -136,6 +136,8 @@ fieldset{border:0;margin:0;padding:0}
 .hours .today{font-weight:700}
 .visit .btn{background:var(--roast);border-color:var(--roast);color:var(--sol)}
 .map{min-height:300px;border-radius:2rem .5rem 2rem 2rem;background:var(--yerba);color:#fff;display:grid;place-items:center;text-align:center;padding:1.5rem}
+.map:has(iframe){padding:0;overflow:hidden;display:block}
+.map iframe{display:block;width:100%;height:100%;min-height:300px;border:0}
 @media(max-width:760px){.visit .wrap{grid-template-columns:1fr;gap:2rem}}
 
 footer{background:var(--roast);color:#dccfcb;padding:2rem 0;font-size:.95rem}
