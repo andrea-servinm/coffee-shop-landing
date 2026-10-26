@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bear Coffee · Café de especialidad en Ciudad del Este</title>
+<meta name="description" content="Café de especialidad tostado en el local, desayunos y repostería casera en Ciudad del Este. Mirá el menú, dejá tu reseña y visitanos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script>/* Aplica el tema guardado antes de pintar, para evitar un parpadeo */
+try{var t=localStorage.getItem("bear-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#inicio">Bear Coffee</a>
+    <ul>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#resenas">Reseñas</a></li>
+      <li><a href="#visitanos">Cómo llegar</a></li>
+    </ul>
+    <div class="nav-end">
+      <button class="theme" id="theme" type="button" aria-label="Cambiar a modo oscuro">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn" href="#" rel="noopener">Reservar mesa</a>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Un café para tomarlo con calma.</h1>
+        <p>Granos de especialidad tostados en Ciudad del Este, medialunas tibias y una mesa esperándote.</p>
+        <div class="acts">
+          <a class="btn solid" href="#menu">Ver el menú</a>
+          <a class="btn" href="#resenas">Leer reseñas</a>
+        </div>
+        <div class="status" id="status"><i></i><span>Revisando horario…</span></div>
+      </div>
+      <svg id="bear" viewBox="0 0 400 400" role="img" aria-label="Un oso relajado con los ojos cerrados dentro de una taza de café">
+        <ellipse cx="200" cy="378" rx="150" ry="11" fill="#7d1d47"/>
+        <path d="M326 285h20c36 0 36 62-4 62h-30" fill="none" stroke="#f4b23e" stroke-width="20" stroke-linecap="round"/>
+        <path d="M70 258h260v14c0 70-52 100-130 100S70 342 70 272z" fill="#f4b23e"/>
+        <ellipse cx="200" cy="258" rx="130" ry="24" fill="#5a3322"/>
+        <ellipse class="ring" cx="200" cy="260" rx="96" ry="15" fill="none" stroke="#c9a27a" stroke-width="3"/>
+        <ellipse class="ring r2" cx="200" cy="260" rx="96" ry="15" fill="none" stroke="#c9a27a" stroke-width="3"/>
+        <g class="steam" fill="none" stroke="#fff5f2" stroke-width="6" stroke-linecap="round" opacity=".85">
+          <path d="M96 232c-18-22 18-36 0-62"/><path d="M304 232c-18-22 18-36 0-62"/>
+        </g>
+        <g class="breathe">
+          <ellipse cx="200" cy="262" rx="82" ry="62" fill="#8a5a3c"/>
+          <circle cx="132" cy="118" r="30" fill="#8a5a3c"/><circle cx="132" cy="120" r="16" fill="#d9a88c"/>
+          <circle cx="268" cy="118" r="30" fill="#8a5a3c"/><circle cx="268" cy="120" r="16" fill="#d9a88c"/>
+          <ellipse cx="200" cy="175" rx="96" ry="82" fill="#8a5a3c"/>
+          <ellipse cx="200" cy="200" rx="42" ry="31" fill="#e6c29b"/>
+          <ellipse cx="200" cy="186" rx="14" ry="9" fill="#2b1810"/>
+          <path d="M200 195v9M200 204q-11 11-22 2M200 204q11 11 22 2" fill="none" stroke="#2b1810" stroke-width="4" stroke-linecap="round"/>
+          <path d="M146 162q16 14 32 0M222 162q16 14 32 0" fill="none" stroke="#2b1810" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="140" cy="192" r="11" fill="#e56f9a" opacity=".55"/><circle cx="260" cy="192" r="11" fill="#e56f9a" opacity=".55"/>
+        </g>
+        <path d="M70 258Q200 306 330 258v14c0 70-52 100-130 100S70 342 70 272z" fill="#f4b23e"/>
+        <path d="M70 258Q200 306 330 258" fill="none" stroke="#e29b22" stroke-width="4"/>
+        <g class="breathe" stroke="#8a5a3c" stroke-width="34" stroke-linecap="round">
+          <path d="M138 238L96 266"/><path d="M262 238L304 266"/>
+        </g>
+        <circle class="breathe" cx="92" cy="268" r="21" fill="#8a5a3c"/><circle class="breathe" cx="308" cy="268" r="21" fill="#8a5a3c"/>
+        <g fill="#fff5f2" font-family="Young Serif,Georgia,serif" font-size="30">
+          <text class="zz" x="262" y="80">z</text><text class="zz z2" x="284" y="60" font-size="38">z</text><text class="zz z3" x="310" y="36" font-size="46">z</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <section class="about" id="nosotros">
+    <div class="wrap">
+      <div>
+        <h2>Bear Coffee nació para ir más despacio.</h2>
+        <p style="margin-top:1.2rem">Empezamos con una idea simple: que un buen café no tenga apuro. Tostamos en el local, en lotes chicos, y horneamos todas las mañanas. Venís a trabajar, a charlar o a llevarte un cortado para el camino.</p>
+      </div>
+      <ul>
+        <li><b>Tostado propio</b>Lotes chicos cada semana, con granos de Brasil y Colombia.</li>
+        <li><b>Horno a las 6:30</b>Medialunas, budines y panes del día.</li>
+        <li><b>Mesa para quedarte</b>Wifi rápido, enchufes y música tranquila.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>Lo que sale de la barra</h2>
+      <div class="tabs" role="tablist" aria-label="Categorías del menú"></div>
+      <div id="items" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="rev" id="resenas">
+    <div class="wrap">
+      <h2>Tu opinión mejora la próxima taza</h2>
+      <div class="top">
+        <div class="avg" id="avg"></div>
+        <div class="bars" id="bars"></div>
+      </div>
+      <div class="layout">
+      <div role="region" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
+        <div id="list" tabindex="0"></div>
+        <div class="ctrl">
+          <button type="button" id="prev" aria-label="Reseña anterior">‹</button>
+          <button type="button" id="next" aria-label="Reseña siguiente">›</button>
+          <span id="pos"></span>
+        </div>
+      </div>
+      <div class="cols">
+        <form id="form" novalidate>
+          <h3>Contanos cómo te fue</h3>
+          <label>Tu nombre<input type="text" id="name" maxlength="40" autocomplete="given-name"></label>
+          <fieldset class="rate">
+            <legend>Tu puntuación</legend>
+            <input type="radio" name="s" id="s5" value="5"><label for="s5" title="5 estrellas">★</label>
+            <input type="radio" name="s" id="s4" value="4"><label for="s4" title="4 estrellas">★</label>
+            <input type="radio" name="s" id="s3" value="3"><label for="s3" title="3 estrellas">★</label>
+            <input type="radio" name="s" id="s2" value="2"><label for="s2" title="2 estrellas">★</label>
+            <input type="radio" name="s" id="s1" value="1"><label for="s1" title="1 estrella">★</label>
+          </fieldset>
+          <label>Tu comentario<textarea id="text" maxlength="300"></textarea></label>
+          <label>¿Qué podemos mejorar? (opcional)<textarea id="sug" maxlength="200"></textarea></label>
+          <button class="btn solid" type="submit">Publicar reseña</button>
+          <div id="msg" role="status"></div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visitanos">
+    <div class="wrap">
+      <div>
+        <h2>Pasá a visitarnos</h2>
+        <address>Av. Conocida Nº 1234<br>Ciudad, País</address>
+        <table class="hours" id="hours"></table>
+        <a class="btn" href="#" rel="noopener">Reservar por WhatsApp</a>
+      </div>
+      <div class="map" role="img" aria-label="Espacio reservado para el mapa"><p><strong>Acá va tu mapa.</strong><br>Reemplazá este bloque por un iframe de Google Maps.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Bear Coffee. Proyecto de muestra.</span>
+    <span><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">+595 900 000 000</a></span>
+  </div>
+  <div class="wrap credit">
+    <span>Diseñado y desarrollado por <a href="https://www.linkedin.com/in/andreaservin-ing" target="_blank" rel="noopener">Andrea Servín</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
